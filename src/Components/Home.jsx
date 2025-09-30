@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
+                                                 // HOME.JSX
+
 const Home = () => {
   const [product, setProduct] = useState([]);
+  
+
   const getProduct = async()=>{
+    
     const products = await fetch(`https://dummyjson.com/products`) //returns promise
     const jsonData = await products.json();
     console.log(jsonData);
