@@ -2,25 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
-const Home = () => {
+const Details = () => {
   const [product, setProduct] = useState([]);
+
   const getProduct = async()=>{
     const products = await fetch(`https://dummyjson.com/products`) //returns promise
     const jsonData = await products.json();
     console.log(jsonData);
-    setProduct(jsonData.products.slice(0,3));
     
   }
   console.log(product);
          
-
   useEffect(()=>{
     getProduct()
   },[])
+
+  
+
   return (
     <div>
       <div>
-        <h1 className='heading'>Home Page. Shop Now!</h1>
+        <h1 className='heading'>Product Details. Shop Now!</h1>
       </div>
       <div className='home-container'>
         {product?.map((item,index,arr)=>{
@@ -33,11 +35,9 @@ const Home = () => {
           )
         })}
       </div>
-      <div className='btn-view'>
-        <button ><Link to= "all-product">View all product</Link></button>
-      </div>
+     
     </div>
   )
 }
 
-export default Home
+export default Details
