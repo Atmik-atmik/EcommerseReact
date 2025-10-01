@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link ,useParams} from 'react-router-dom';
+import Breadcrumb from './Breadcrumb';
 
 
 const Details = () => {
@@ -25,8 +26,10 @@ const Details = () => {
 
   return (
     <div>
+      
       <div>
         <h1 className='heading'>Product Details. Shop Now!</h1>
+        <Breadcrumb/>
       </div>
       <div className='home-container'>
         {/* map is not requried because product is not array */}

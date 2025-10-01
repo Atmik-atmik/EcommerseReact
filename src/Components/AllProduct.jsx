@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import Breadcrumb from './Breadcrumb';
 
 
 const AllProduct = () => {
@@ -28,8 +29,10 @@ const AllProduct = () => {
 
   return (
     <div>
+      
       <div>
         <h1 className='heading'>Product Details Shop Now!</h1>
+        <Breadcrumb/>
       </div>
       <div className='home-container'>
         {product?.map((item,index,arr)=>{
